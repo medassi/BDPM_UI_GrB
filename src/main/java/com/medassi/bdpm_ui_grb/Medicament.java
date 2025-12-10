@@ -15,5 +15,12 @@ public class Medicament implements Serializable{
     public String numero_auth ;
     public String titulaires ;
     public String surveillance_renforcee ;
+
+    @Override
+    public String toString() {
+        return denomination + "("+code_cis+")"; 
+    }
+
+    
             
 }

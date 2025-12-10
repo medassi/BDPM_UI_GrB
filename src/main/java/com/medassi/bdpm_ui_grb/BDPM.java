@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class BDPM {
 
@@ -80,8 +82,8 @@ public class BDPM {
         return ms;
     }
 
-    ArrayList<Medicament> getMedicamentsByMotClef(String commeJeVeux) {
-       ArrayList<Medicament> ms = new ArrayList<>();
+    ObservableList<Medicament> getMedicamentsByMotClef(String commeJeVeux) {
+       ObservableList<Medicament> ms = FXCollections.observableArrayList();
         try {
             ResultSet rs;
             String sql = "SELECT * FROM medicaments where denomination like \"%"+commeJeVeux+"%\"";

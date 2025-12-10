@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.medassi.bdpm_ui_grb.PrimaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="892.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.medassi.bdpm_ui_grb.PrimaryController">
    <children>
-      <TextField fx:id="tfMot" layoutX="14.0" layoutY="14.0" onKeyPressed="#onNewWord" prefHeight="25.0" prefWidth="238.0" promptText="Mot clef à rechercher" />
-      <TextArea fx:id="taFiche" layoutX="260.0" layoutY="14.0" prefHeight="378.0" prefWidth="323.0" />
-      <ListView fx:id="lvMedocs" layoutX="14.0" layoutY="45.0" onMouseClicked="#onClicListMedocs" prefHeight="348.0" prefWidth="238.0" />
+      <TextField fx:id="tfMot" layoutX="19.0" layoutY="146.0" onKeyReleased="#onNewWord" prefHeight="42.0" prefWidth="394.0" promptText="Mot clef à rechercher">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font></TextField>
+      <ListView fx:id="lvMedocs" layoutX="19.0" layoutY="199.0" onMouseClicked="#onClicListMedocs" prefHeight="277.0" prefWidth="394.0" />
+      <Label layoutX="413.0" layoutY="23.0" prefHeight="70.0" prefWidth="416.0" text="BDPM MediSearch" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="141.0" fitWidth="394.0" layoutX="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="437.0" layoutY="141.0" prefHeight="337.0" prefWidth="448.0">
+         <children>
+            <Label fx:id="labelDenomination" prefHeight="35.0" prefWidth="358.0" text="Label">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDateAMM" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTitulaires" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lvComposants" prefHeight="243.0" prefWidth="448.0" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
