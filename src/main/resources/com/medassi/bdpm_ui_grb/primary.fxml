@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.medassi.bdpm_ui_grb.PrimaryController">
+   <children>
+      <TextField fx:id="tfMot" layoutX="14.0" layoutY="14.0" onKeyPressed="#onNewWord" prefHeight="25.0" prefWidth="238.0" promptText="Mot clef à rechercher" />
+      <TextArea fx:id="taFiche" layoutX="260.0" layoutY="14.0" prefHeight="378.0" prefWidth="323.0" />
+      <ListView fx:id="lvMedocs" layoutX="14.0" layoutY="45.0" onMouseClicked="#onClicListMedocs" prefHeight="348.0" prefWidth="238.0" />
+   </children>
+</AnchorPane>
