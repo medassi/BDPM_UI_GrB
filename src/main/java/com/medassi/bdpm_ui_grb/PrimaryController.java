@@ -52,6 +52,8 @@ public class PrimaryController implements Initializable {
         labelDenomination.setText(medocSel.denomination);
         labelDateAMM.setText(medocSel.date_amm);
         labelTitulaires.setText(medocSel.titulaires);
+        lvComposants.setItems(BDPM.getDatabase().getCompositionByMedicament(medocSel));
+        
     }
     
 }

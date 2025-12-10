@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="892.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.medassi.bdpm_ui_grb.PrimaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="1013.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.medassi.bdpm_ui_grb.PrimaryController">
    <children>
       <TextField fx:id="tfMot" layoutX="19.0" layoutY="146.0" onKeyReleased="#onNewWord" prefHeight="42.0" prefWidth="394.0" promptText="Mot clef à rechercher">
          <font>
@@ -26,24 +26,24 @@
             <Image url="@logo.png" />
          </image>
       </ImageView>
-      <VBox layoutX="437.0" layoutY="141.0" prefHeight="337.0" prefWidth="448.0">
+      <VBox layoutX="437.0" layoutY="141.0" prefHeight="337.0" prefWidth="563.0">
          <children>
-            <Label fx:id="labelDenomination" prefHeight="35.0" prefWidth="358.0" text="Label">
+            <Label fx:id="labelDenomination" prefHeight="35.0" prefWidth="550.0" text="Label">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="labelDateAMM" text="Label">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelTitulaires" text="Label">
+            <Label fx:id="labelDateAMM" prefHeight="27.0" prefWidth="550.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ListView fx:id="lvComposants" prefHeight="243.0" prefWidth="448.0" />
+            <Label fx:id="labelTitulaires" prefHeight="27.0" prefWidth="543.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lvComposants" prefHeight="243.0" prefWidth="559.0" />
          </children>
       </VBox>
    </children>

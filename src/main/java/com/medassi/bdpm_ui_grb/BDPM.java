@@ -62,18 +62,18 @@ public class BDPM {
         return ms;
     }
 
-    ArrayList<Composant> getCompositionByMedicament(Medicament m) {
-        ArrayList<Composant> ms = new ArrayList<>();
+    ObservableList<Composant> getCompositionByMedicament(Medicament m) {
+        ObservableList<Composant> ms = FXCollections.observableArrayList();
         try {
             ResultSet rs;
             //String sql = "Select * from compositions where code_cis=\""+m.code_cis+"\"";
-            String sql = "Select * from compositions where code_cis='"+m.code_cis+"'";
+            String sql = "Select * from compositions where code_cis='" + m.code_cis + "'";
             rs = statement.executeQuery(sql);
             while (rs.next()) {
                 Composant c = new Composant();
                 c.code_cis = rs.getString("code_cis");
-                c.denomination_sub = rs.getString("denomination_sub") ;
-                c.dosage = rs.getString("dosage") ;
+                c.denomination_sub = rs.getString("denomination_sub");
+                c.dosage = rs.getString("dosage");
                 ms.add(c);
             }
         } catch (SQLException ex) {
@@ -83,10 +83,10 @@ public class BDPM {
     }
 
     ObservableList<Medicament> getMedicamentsByMotClef(String commeJeVeux) {
-       ObservableList<Medicament> ms = FXCollections.observableArrayList();
+        ObservableList<Medicament> ms = FXCollections.observableArrayList();
         try {
             ResultSet rs;
-            String sql = "SELECT * FROM medicaments where denomination like \"%"+commeJeVeux+"%\"";
+            String sql = "SELECT * FROM medicaments where denomination like \"%" + commeJeVeux + "%\"";
             rs = statement.executeQuery(sql);
             while (rs.next()) {
                 Medicament m = new Medicament();
@@ -110,13 +110,13 @@ public class BDPM {
         return ms;
     }
 
-    Medicament getMedicamentByCodeCIS( String leCodeCis ){
-        Medicament m = null ;
-        String sql = "select * from medicaments where code_cis='"+leCodeCis+"'" ;
+    Medicament getMedicamentByCodeCIS(String leCodeCis) {
+        Medicament m = null;
+        String sql = "select * from medicaments where code_cis='" + leCodeCis + "'";
         try {
-            ResultSet rs ;
-            rs = statement.executeQuery(sql) ;
-            if( rs.next() ){
+            ResultSet rs;
+            rs = statement.executeQuery(sql);
+            if (rs.next()) {
                 m = new Medicament();
                 m.code_cis = rs.getString("code_cis");
                 m.denomination = rs.getString("denomination");
@@ -134,14 +134,14 @@ public class BDPM {
         } catch (SQLException ex) {
             System.getLogger(BDPM.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
-        return m ;
+        return m;
     }
-    
+
     ArrayList<Medicament> getMedicamentsByLabo(String commeJeVeux) {
-       ArrayList<Medicament> ms = new ArrayList<>();
+        ArrayList<Medicament> ms = new ArrayList<>();
         try {
             ResultSet rs;
-            String sql = "SELECT * FROM medicaments where titulaires like \"%"+commeJeVeux+"%\"";
+            String sql = "SELECT * FROM medicaments where titulaires like \"%" + commeJeVeux + "%\"";
             rs = statement.executeQuery(sql);
             while (rs.next()) {
                 Medicament m = new Medicament();
@@ -165,5 +165,4 @@ public class BDPM {
         return ms;
     }
 
-    
 }
